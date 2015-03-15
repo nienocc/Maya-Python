@@ -1,0 +1,7 @@
+//*
+
+from pymel.core import *
+copyAttr(selected()[1],selected()[0],v=1)
+parent(selected()[0],selected()[1])
+
+*//
