@@ -1,0 +1,32 @@
+from pymel.core import *
+setAttr ('defaultRenderGlobals.enableDefaultLight' , 0)
+setAttr ('miDefaultOptions.maxSamples' , 1)
+setAttr ('miDefaultOptions.contrastA' , 0.05)
+setAttr ('miDefaultOptions.filter' , 2)
+setAttr ('miDefaultOptions.filterWidth' , 0.7333333333)
+setAttr ('miDefaultOptions.filterHeight' , 0.7333333333)
+setAttr ('miDefaultFramebuffer.datatype' , 16)
+setAttr ('miDefaultOptions.finalGather' , 1)
+setAttr ('miDefaultOptions.finalGatherRays' , 200)
+setAttr ('miDefaultOptions.finalGatherScale' , 0.49,0.595,0.7 , type="double3") ;
+setAttr ('miDefaultOptions.finalGatherBounceScale' , 0.32,0.353333,0.4 , type="double3") ;
+setAttr ('miDefaultOptions.finalGatherFilter' , 1)
+
+
+from pymel.core import *
+selShape = listRelatives(s=1)
+for i in selShape :
+    setAttr (i.primaryVisibility , 0)
+    
+
+from pymel.core import *
+selShape = listRelatives(s=1)
+for i in selShape :
+    setAttr (i.visibleInRefractions , 1)
+    
+
+from pymel.core import *
+selShape = listRelatives(s=1)
+for i in selShape :
+    setAttr (i.visibleInRefractions , 0)
+    setAttr (i.visibleInReflections , 0)
